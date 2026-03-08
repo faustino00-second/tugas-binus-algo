@@ -29,12 +29,25 @@ class Mahasiswa {
         this.ipk = ipkBaru;
     }
 
+    public String hitungPredikat() {
+        if (ipk >= 3.75) {
+            return "Dengan Pujian";
+        } else if (ipk >= 3.50) {
+            return "Sangat Memuaskan";
+        } else if (ipk >= 3.00) {
+            return "Memuaskan";
+        } else {
+            return "Perlu Perbaikan";
+        }
+    }
+
     public void tampilkanInfo() {
         System.out.println("Nama: " + nama);
         System.out.println("NIM: " + nim);
         System.out.println("Jurusan: " + jurusan);
         System.out.printf("IPK: %.2f\n", ipk);
         System.out.println("Status: " + cekKelulusan());
+        System.out.println("Predikat: " + hitungPredikat());
         System.out.println();
     }
 }
